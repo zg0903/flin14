@@ -45,7 +45,8 @@ public class _21_Window_Api3 {
         });
 
 
-        SingleOutputStreamOperator<Tuple2<EventBean2, Integer>> eventBean2SingleOutputStreamOperator = beanStream.assignTimestampsAndWatermarks(WatermarkStrategy.<Tuple2<EventBean2, Integer>>forBoundedOutOfOrderness(Duration.ofMinutes(0))
+        SingleOutputStreamOperator<Tuple2<EventBean2, Integer>> eventBean2SingleOutputStreamOperator =
+                beanStream.assignTimestampsAndWatermarks(WatermarkStrategy.<Tuple2<EventBean2, Integer>>forBoundedOutOfOrderness(Duration.ofMinutes(0))
                 .withTimestampAssigner(new SerializableTimestampAssigner<Tuple2<EventBean2, Integer>>() {
                     @Override
                     public long extractTimestamp(Tuple2<EventBean2, Integer> element, long recordTimestamp) {
