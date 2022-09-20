@@ -6,7 +6,11 @@
 
     <groupId>com.zg</groupId>
     <artifactId>flink14</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>TracfficMonitor</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -81,6 +85,19 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>Lombok</artifactId>
             <version>1.18.12</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-statebackend-rocksdb_2.12</artifactId>
+            <version>1.14.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-cep_2.11</artifactId>
+            <version>1.14.4</version>
         </dependency>
 
     </dependencies>

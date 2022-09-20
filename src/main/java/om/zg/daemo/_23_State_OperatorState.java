@@ -85,6 +85,12 @@ class Mymap implements MapFunction<String, String>, CheckpointedFunction {
         ListStateDescriptor<String> stateDescriptor =
                 new ListStateDescriptor<>("Strings", String.class);
 
+
+//        unionListSatte 和普通 listState的区别:
+//        unionListSatte 的快照存储数据 在系统重启后 list的数据重分配模式为 广播模式  在每个subtask上都拥有一份完整的数据
+//        listState的快照存储数据 在系统重启后 加载状态数据时 系统自动进行状态数据的重平均分配
+
+
 //        getListState 程序启动前重启持久化的状态 数据
         listState = operatorStateStore.getListState(stateDescriptor);
     }
